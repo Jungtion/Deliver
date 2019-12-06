@@ -151,6 +151,7 @@ int main(int argc, char *argv[]) {
                 //try to extract the cell
 				if (str_extractStorage(x,y) != 0)
 				{
+					printf(" -----------> password is wrong!\n");
 					printf(" -----------> Failed to extract my package!\n");
 				}
 				break;

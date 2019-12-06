@@ -3,8 +3,6 @@
 #include <string.h>
 #include "storage.h"
 
-#pragma warning(disable: 4996) // Visual Studio에서 scanf를 사용하기 위함이니 지워도됩니다.
-
 /* 
   definition of storage cell structure ----
   members :
@@ -299,7 +297,7 @@ int str_pushToStorage(int x, int y, int nBuilding, int nRoom, char msg[MAX_MSG_S
 	int i;
 
 	deliverySystem[x][y].building = nBuilding;
-	deliverySystem[x][y].building = nRoom;
+	deliverySystem[x][y].room = nRoom;
 	strcpy(deliverySystem[x][y].context, msg);
 
 	for(i = 0; i < PASSWD_LEN+1; ++ i)
