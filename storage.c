@@ -243,6 +243,17 @@ void str_freeSystem(void) {
 void str_printStorageStatus(void) {
 	int i, j;
 	
+	storedCnt=0;
+	
+	for(i=0; i<systemSize[0]; i++)
+	{
+		for(j=0; j<systemSize[1]; j++)
+		{
+			if (deliverySystem[i][j].cnt==1)
+			storedCnt++;
+		}
+	}
+	
 	printf("----------------------------- Delivery Storage System Status (%i occupied out of %i )-----------------------------\n\n", storedCnt, systemSize[0] * systemSize[1]);
 
 	printf("\t");
