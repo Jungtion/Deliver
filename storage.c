@@ -77,7 +77,9 @@ static int inputPasswd(int x, int y) {
 
 	for(i = 0; i < PASSWD_LEN + 1; ++ i)
 	{
-		if (strcmp(passwd, "1234") == 0) { break; } // 마스터키일시 반복문 빠져나오기
+		if (strcmp(passwd, masterPassword) == 0) { break; } // 마스터키일시 반복문 빠져나오기
+		
+		if(deliverySystem[y][x].passwd[i] == '\0') { break; } //비밀번호의 끝일시 빠져나오기
 
 		if(deliverySystem[y][x].passwd[i] != passwd[i])
 		{
@@ -124,7 +126,7 @@ int str_backupSystem(char* filepath) {
 			}
 		}
 	}
-	
+	fclose(fp);
 	return 0;
 }
 
